@@ -8,8 +8,8 @@
     :root {
       --bg: #f5f5f7;
       --card: #ffffff;
-      --accent: #1f4f7b;
-      --accent-soft: #e4edf7;
+      --accent: #184d9b;
+      --accent-soft: #dbe7ff;
       --text-main: #1f2430;
       --text-soft: #555c6a;
       --border-soft: #e0e3eb;
@@ -148,9 +148,26 @@
       padding: 24px 22px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      align-items: stretch;
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.60);
       border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .profile-photo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .profile-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(248, 250, 252, 0.85);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.7);
+      background: radial-gradient(circle at 30% 20%, #1f2937, #020617);
     }
 
     .contact-block h2 {
@@ -211,7 +228,7 @@
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--text-soft);
+      color: var(--accent);
       margin-bottom: 10px;
       font-weight: 600;
     }
@@ -235,6 +252,8 @@
     .entry-meta {
       font-size: 0.8rem;
       color: var(--text-soft);
+      text-align: right;
+      white-space: nowrap;
     }
 
     .entry-sub {
@@ -272,30 +291,25 @@
       body {
         padding: 24px 12px;
       }
+
       .hero {
         grid-template-columns: minmax(0, 1fr);
       }
+
       .sections {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .entry-meta {
+        text-align: left;
+        white-space: normal;
+      }
     }
-
-.profile-photo-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-
-.profile-photo {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(248, 250, 252, 0.85);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.7);
-  background: radial-gradient(circle at 30% 20%, #1f2937, #020617);
-}
-
   </style>
 </head>
 <body>
@@ -305,7 +319,7 @@
       <div class="hero-card">
         <div class="headline">
           <div>
-            <!-- div class="tagline">Politiques publiques & affaires européennes</div>  -->
+             <!-- div class="tagline">Politiques publiques & affaires européennes</div>  -->
             <h1 class="name">Théophane Gauthier</h1>
           </div>
           <div class="pill">
@@ -315,14 +329,15 @@
         </div>
 
         <p class="intro">
-          Récemment diplômé du double cursus « Management des politiques publiques » entre Sciences Po Lille et l’EDHEC Business School, avec des expériences en administration publique, affaires publiques et gestion opérationnelle internationale.
+          Je suis en train de terminer mon double cursus « Management des politiques publiques » entre Sciences Po Lille et l’EDHEC Business School, avec des expériences en administration publique, affaires publiques, et pilotage opérationnel dans des environnements internationaux exigeants.
         </p>
 
         <div class="chips">
           <span class="chip">Transformation numérique de l’État</span>
           <span class="chip">Affaires publiques & lobbying</span>
-          <span class="chip">Gestion de projets européens</span>
+          <span class="chip">Gestion de projets & consortiums</span>
           <span class="chip">Management d’équipes & opérations</span>
+          <span class="chip">Environnements internationaux</span>
         </div>
 
         <!-- 
@@ -337,91 +352,114 @@
           </div>
         </div>
                   -->
+
       </div>
 
-
-     <aside class="side-card">
-  <div class="profile-photo-wrapper">
-    <!-- Remplace src par l’URL ou le chemin de ta photo -->
+      <aside class="side-card">
+        <div class="profile-photo-wrapper">
+          <!-- Remplace src par le chemin/URL de ta photo -->
     <img src="https://media.licdn.com/dms/image/v2/D4E03AQGTakCBUdbXLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728393894914?e=1769644800&v=beta&t=fD6Z3xUjLuXKyO1fAKQWAQ-WAKMvlHoBfDnx312xIBs" alt="Photo de Théophane Gauthier" class="profile-photo">
-  </div>
+        </div>
 
-  <div class="contact-block">
-    <h2>Contact</h2>
-    <div class="contact-item">
-      <a href="mailto:theophane.gauthier@sciencespo-lille.eu">
-        theophane.gauthier@sciencespo-lille.eu
-      </a>
-    </div>
-    <div class="contact-item">
-      <a href="tel:+33637908379">+33 6 37 90 83 79</a>
-    </div>
-    <div class="location">
-      Paris · Île-de-France · France
-    </div>
-    <div class="availability">
-      Disponible pour un CDI/CDD à partir de <span>septembre 2026</span>.
-    </div>
-  </div>
-</aside>
-
+        <div class="contact-block">
+          <h2>Contact</h2>
+          <div class="contact-item">
+            <a href="mailto:theophane.gauthier@sciencespo-lille.eu">
+              theophane.gauthier@sciencespo-lille.eu
+            </a>
+          </div>
+          <div class="contact-item">
+            <a href="tel:+33637908379">+33 6 37 90 83 79</a>
+          </div>
+          <div class="location">
+            Maisons-Alfort · Île-de-France · France
+          </div>
+          <div class="availability">
+            À la recherche d’un CDI/CDD à temps plein à partir de <span>septembre 2026</span>.
+          </div>
+        </div>
+      </aside>
     </section>
 
     <!-- MAIN SECTIONS -->
     <section class="sections">
-      <!-- Colonne gauche -->
+      <!-- Colonne gauche : expériences pro -->
       <div class="section-card">
         <h2 class="section-title">Expériences professionnelles</h2>
 
         <article class="entry">
           <div class="entry-header">
-            <div class="entry-main">ANTS – France Titres, Programme France Identité Numérique</div>
+            <div class="entry-main">Agence Nationale des Titres Sécurisés – France Titres, Programme France Identité Numérique</div>
             <div class="entry-meta">Stage de fin d’études · janv. – juil. 2026</div>
           </div>
-          <div class="entry-sub">Appui au directeur de l’application « France Identité » et coordination du consortium européen « Aptitude ».</div>
+         
           <ul>
-            <li>Contribution à la stratégie produit de l’application France Identité.</li>
-            <li>Soutien à la coordination d’un consortium européen sur l’identité numérique.</li>
+            <li>Appui au directeur de l’application « France Identité »</li>
+            <li>Appui à la coordination du consortium européen « Aptitude » sur l’identité numérique.</li>
           </ul>
         </article>
 
         <article class="entry">
           <div class="entry-header">
             <div class="entry-main">Direction interministérielle du numérique – Cabinet de la Directrice</div>
-            <div class="entry-meta">Stage · juin – sept. 2025</div>
+            <div class="entry-meta">Stagiaire auprès du conseiller de la Directrice · juin – sept. 2025</div>
           </div>
-          <div class="entry-sub">
-            Construction d’un consortium pour une infrastructure numérique européenne et appui à la transformation des projets numériques publics.
-          </div>
+         
           <ul>
-            <li>Création et implémentation du DC‑EDIC sur les Communs numériques, en lien avec la Commission européenne et des partenaires transfrontaliers.</li>
-            <li>Dépôt de la structure légale en préfecture et rédaction d’un livre blanc sur le passage en « mode produit » à France Travail.</li>
+            <li>Contribution à la création et à l’implémentation du European Digital Infrastructure Consortium (DC‑EDIC) sur les Communs numériques, en lien avec la Commission européenne et les partenaires (Allemagne, Pays‑Bas, Italie).</li>
+            <li>Participation à l’enregistrement de la structure légale auprès des autorités françaises et préparation des documents de gouvernance.</li>
+            <li>Rédaction d’un livre blanc sur la transition des projets numériques de l’État en « mode produit », s’appuyant sur entretiens, retours d’expérience et recommandations opérationnelles.</li>
           </ul>
         </article>
 
         <article class="entry">
           <div class="entry-header">
             <div class="entry-main">Rumeur Publique – Pôle Affaires publiques</div>
-            <div class="entry-meta">Stage de césure · sept. 2024 – janv. 2025</div>
+            <div class="entry-meta">Stagiaire en affaires publiques · sept. 2024 – janv. 2025</div>
           </div>
-          <div class="entry-sub">Accompagnement de clients dans leurs stratégies de lobbying et de plaidoyer.</div>
+          
           <ul>
-            <li>Veille législative et réglementaire, rédaction de brèves d’analyse.</li>
-            <li>Cartographies d’acteurs et biographies de parties prenantes, prise de notes en rendez‑vous.</li>
+            <li>Veille législative et réglementaire aux niveaux national et européen, avec diffusion de notes de synthèse pour les clients.</li>
+            <li>Élaboration de cartographies d’acteurs, fiches profils et analyses d’enjeux pour orienter les prises de contact et les stratégies d’influence.</li>
+            <li>Rédaction de comptes rendus détaillés de réunions et auditions parlementaires, transformés en recommandations opérationnelles.</li>
           </ul>
         </article>
 
         <article class="entry">
           <div class="entry-header">
-            <div class="entry-main">Évènements sportifs internationaux</div>
-            <div class="entry-meta">Étés 2023 & 2024</div>
+            <div class="entry-main">Paris 2024 – Comité d’organisation des Jeux Olympiques</div>
+            <div class="entry-meta">Transportation Coordinator · juil. – août 2024</div>
           </div>
-          <div class="entry-sub">
-            Supervision du transport des populations accréditées (tournois de tennis et Jeux Olympiques).
-          </div>
+         
           <ul>
-            <li>Gestion de 50 volontaires, d’une flotte de 20 véhicules et coordination de 40 chauffeurs.</li>
-            <li>Mise en œuvre de solutions rapides pour maintenir un taux de 99 % de courses assurées à l’heure.</li>
+            <li>Management d’une équipe de 50 volontaires et coordination opérationnelle quotidienne des transports, avec jusqu’à 40 départs de bus par jour.</li>
+            <li>Mise en œuvre de solutions rapides pour résoudre les incidents tout en maintenant un niveau élevé de satisfaction des parties prenantes.</li>
+            <li>Travail en environnement bilingue et fortement réglementé, avec respect strict des protocoles de sûreté et de service.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">All England Lawn Tennis Club – Wimbledon</div>
+            <div class="entry-meta">Fleet Controller · juin – juil. 2024</div>
+          </div>
+         
+          <ul>
+            <li>Supervision opérationnelle d’une flotte d’environ 25 véhicules et de 40 chauffeurs pour les joueurs et leurs entourages.</li>
+            <li>Garantie d’un haut niveau de ponctualité (environ 99&nbsp;% des trajets à l’heure) dans un environnement international sous forte contrainte de temps.</li>
+            <li>Interaction quotidienne en anglais avec des publics issus de multiples fédérations et pays.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Fédération française de tennis – Roland-Garros</div>
+            <div class="entry-meta">Missions saisonnières · étés 2023 & 2024</div>
+          </div>
+         
+          <ul>
+            <li>Coordination d’une flotte de véhicules partagés entre plusieurs chauffeurs et gestion en temps réel des priorités de transport.</li>
+            <li>Résolution d’imprévus logistiques, avec un taux de service très élevé et une forte exigence de réactivité.</li>
           </ul>
         </article>
 
@@ -430,25 +468,49 @@
             <div class="entry-main">Département de la Seine-Maritime – Collaborateur politique</div>
             <div class="entry-meta">Temps partiel · oct. 2023 – mai 2024</div>
           </div>
-          <div class="entry-sub">Appui communication et production de contenus politiques.</div>
+         
           <ul>
-            <li>Élaboration de stratégies de communication et rédaction de notes politiques.</li>
-            <li>Production de contenus numériques, dont une série de 15 vidéos de décryptage de l’action politique.</li>
+            <li>Conception et mise en œuvre de stratégies de communication numérique pour valoriser l’action de la majorité.</li>
+            <li>Production de contenus pédagogiques, dont une série de 15 vidéos expliquant les politiques publiques déployées.</li>
+            <li>Rédaction de notes politiques et d’éléments de langage alignant communication externe et priorités de l’exécutif.</li>
           </ul>
         </article>
 
         <article class="entry">
           <div class="entry-header">
-            <div class="entry-main">Stages de découverte – Seine-Maritime</div>
-            <div class="entry-meta">2020 – 2022</div>
+            <div class="entry-main">Département de la Seine-Maritime – Cabinet du Président</div>
+            <div class="entry-meta">Stagiaire · juin – juil. 2022</div>
+          </div>
+          
+          <ul>
+            <li>Préparation de notes de cadrage et de briefings stratégiques pour le Président et les élus.</li>
+            <li>Suivi de la mise en œuvre des priorités politiques via un tableau de bord dédié.</li>
+            <li>Entretien d’un fichier d’élus locaux et d’acteurs territoriaux pour renforcer les relations institutionnelles.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Cabinet du Maire du Havre</div>
+            <div class="entry-meta">Stage de découverte · juil. 2020</div>
           </div>
           <div class="entry-sub">
-            Cabinet du Président du Département (juin – juillet 2022), Cabinet du Maire du Havre (juillet 2020), Députée de la Seine-Maritime (juin 2020).
+            Découverte de l’action municipale, de la relation aux habitants et de la communication politique locale.
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Députée de la Seine-Maritime</div>
+            <div class="entry-meta">Stage de découverte · juin 2020</div>
+          </div>
+          <div class="entry-sub">
+            Immersion au sein d’un cabinet parlementaire et première sensibilisation au travail législatif.
           </div>
         </article>
       </div>
 
-      <!-- Colonne droite -->
+      <!-- Colonne droite : formation, engagements, compétences -->
       <div class="section-card">
         <h2 class="section-title">Formation</h2>
 
@@ -457,10 +519,13 @@
             <div class="entry-main">Sciences Po Lille</div>
             <div class="entry-meta">2020 – 2026</div>
           </div>
-          <div class="entry-sub">Double cursus avec l’Université du Kent et l’EDHEC Business School.</div>
+          <div class="entry-sub">
+            Double cursus franco-britannique (Bachelor) puis double diplôme de Master « Management des politiques publiques » avec l’EDHEC Business School.
+          </div>
           <ul>
-            <li>Rapport d’expertise : « L’implémentation et la sécurisation du mandat administratif numérique ».</li>
+            <li>Rapport d’expertise : « L’implémentation et la sécurisation du mandat administratif numérique (proches aidants et conseillers numériques France Services) ».</li>
             <li>Membre du Conseil d’administration, représentant étudiant (sept. 2024 – nov. 2025).</li>
+            <li>Cours centrés sur le droit et les politiques publiques européennes, la commande publique, la transformation de l’action publique et la mobilité.</li>
           </ul>
         </article>
 
@@ -469,15 +534,19 @@
             <div class="entry-main">EDHEC Business School</div>
             <div class="entry-meta">2023 – 2026</div>
           </div>
-          <div class="entry-sub">Programme Grande École – Management des politiques publiques.</div>
+          <div class="entry-sub">
+            Programme Grande École – parcours « Management des politiques publiques » (double diplôme avec Sciences Po Lille).
+          </div>
         </article>
 
         <article class="entry">
           <div class="entry-header">
-            <div class="entry-main">University of Kent (Royaume-Uni)</div>
+            <div class="entry-main">University of Kent – Royaume-Uni</div>
             <div class="entry-meta">2020 – 2024</div>
           </div>
-          <div class="entry-sub">Bachelor of Arts, Politics and International Relations (First Class).</div>
+          <div class="entry-sub">
+            Bachelor of Arts, Politics and International Relations (First Class), dans le cadre du cursus franco-britannique avec Sciences Po Lille.
+          </div>
         </article>
 
         <article class="entry">
@@ -485,7 +554,25 @@
             <div class="entry-main">CPGE B/L – Sainte-Marie de Neuilly</div>
             <div class="entry-meta">2019 – 2020</div>
           </div>
-          <div class="entry-sub">Classe préparatoire lettres et sciences sociales.</div>
+          <div class="entry-sub">
+            Classe préparatoire lettres et sciences sociales.
+          </div>
+        </article>
+
+        <h2 class="section-title" style="margin-top:16px;">Expériences internationales</h2>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">University of Kent – Canterbury</div>
+            <div class="entry-meta">Food & Beverage Assistant · 2021 – 2023</div>
+          </div>
+          <div class="entry-sub">
+            Job étudiant au sein des services d’accueil et de restauration de l’université.
+          </div>
+          <ul>
+            <li>Accueil et service d’une population internationale d’étudiants et de personnels en anglais.</li>
+            <li>Développement de réflexes de service client, de gestion de flux et de résolution de problèmes en environnement multiculturel.</li>
+          </ul>
         </article>
 
         <h2 class="section-title" style="margin-top:16px;">Engagements associatifs</h2>
@@ -493,33 +580,40 @@
         <article class="entry">
           <div class="entry-header">
             <div class="entry-main">Parlement européen des Jeunes – France</div>
-            <div class="entry-meta">2019 – 2025</div>
+            <div class="entry-meta">Responsable associatif · 2019 – 2025</div>
           </div>
-          <div class="entry-sub">Responsable associatif au sein du comité français du réseau européen.</div>
+          <div class="entry-sub">
+            Gestion et développement d’un comité national au sein d’un réseau européen de jeunesse.
+          </div>
           <ul>
-            <li>Planification stratégique et demandes de subventions (env. 500 000 € de budget annuel).</li>
-            <li>Gestion administrative, conformité légale et animation d’un réseau de 100 bénévoles.</li>
+            <li>Planification stratégique et demandes de subventions locales et nationales (environ 500&nbsp;000&nbsp;€ de budget annuel).</li>
+            <li>Gestion administrative, conformité légale et animation d’un réseau d’environ 100 bénévoles.</li>
+            <li>Représentation du comité national français auprès des instances de gouvernance du réseau European Youth Parliament.</li>
           </ul>
         </article>
 
         <article class="entry">
           <div class="entry-header">
             <div class="entry-main">Sciences Po Lille Junior Conseil</div>
-            <div class="entry-meta">sept. 2023 – sept. 2024</div>
+            <div class="entry-meta">Chef de projet & chargé du suivi d’études · sept. 2023 – sept. 2024</div>
           </div>
-          <div class="entry-sub">Chef de projet et chargé du suivi d’études.</div>
+          <div class="entry-sub">
+            Pilotage et suivi de missions de conseil dans le cadre de la Junior-Entreprise.
+          </div>
           <ul>
-            <li>Suivi de missions, prospection et mise en relation clients–consultants.</li>
-            <li>Veille de conformité au cadre légal des Junior-Entreprises.</li>
+            <li>Suivi des prestations en cours, prospection et mise en relation clients–consultants.</li>
+            <li>Veille de conformité au cadre légal des Junior-Entreprises et gestion des documents administratifs.</li>
           </ul>
         </article>
 
         <article class="entry">
           <div class="entry-header">
             <div class="entry-main">Scouts Unitaires de France – Londres</div>
-            <div class="entry-meta">sept. 2022 – juin 2023</div>
+            <div class="entry-meta">Chef d’unité · sept. 2022 – juin 2023</div>
           </div>
-          <div class="entry-sub">Chef d’unité.</div>
+          <div class="entry-sub">
+            Encadrement et animation d’unité scoute à l’international.
+          </div>
         </article>
 
         <h2 class="section-title" style="margin-top:16px;">Compétences</h2>
@@ -528,7 +622,7 @@
           <div class="entry-sub"><strong>Langues</strong></div>
           <div class="skills-list">
             <span>Français (natif)</span>
-            <span>Anglais (bilingue)</span>
+            <span>Anglais (bilingue – C1)</span>
             <span>Allemand (A2, écrit & oral)</span>
           </div>
         </div>
@@ -539,7 +633,7 @@
             <span>Suite Adobe (Illustrator, Lightroom, Premiere Pro)</span>
             <span>Canva</span>
             <span>Suite Google</span>
-            <span>Suite Office (Excel)</span>
+            <span>Suite Microsoft Office (Excel)</span>
             <span>RStudio</span>
           </div>
         </div>
