@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Théophane Gauthier – Présentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --accent: #1f4f7b;
+      --accent-soft: #e4edf7;
+      --text-main: #1f2430;
+      --text-soft: #555c6a;
+      --border-soft: #e0e3eb;
+      --chip-bg: #eef2fa;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --radius-lg: 18px;
+      --radius-sm: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e8f0ff, #f5f5f7 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 16px;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(260px, 1.2fr);
+      gap: 32px;
+      align-items: stretch;
+      margin-bottom: 32px;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 28px 28px 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .headline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .tagline {
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .intro {
+      margin: 12px 0 18px;
+      font-size: 0.98rem;
+      color: var(--text-soft);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .chip {
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--chip-bg);
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin-top: 8px;
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.8);
+    }
+
+    .side-card {
+      background: rgba(15, 23, 42, 0.94);
+      border-radius: 24px;
+      color: #e5e7eb;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.60);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .contact-block h2 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    .contact-item {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .location {
+      font-size: 0.86rem;
+      color: #cbd5f5;
+      margin-top: 8px;
+    }
+
+    .availability {
+      margin-top: 14px;
+      font-size: 0.86rem;
+      color: #cbd5f5;
+    }
+
+    .availability span {
+      font-weight: 600;
+      color: #facc15;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(260px, 1.3fr);
+      gap: 24px;
+    }
+
+    .section-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .entry {
+      margin-bottom: 14px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.94rem;
+      margin-bottom: 2px;
+    }
+
+    .entry-main {
+      font-weight: 600;
+    }
+
+    .entry-meta {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .entry-sub {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .entry ul {
+      margin-left: 18px;
+      margin-top: 2px;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .entry ul li {
+      margin-bottom: 2px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.84rem;
+    }
+
+    .skills-list span {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 860px) {
+      body {
+        padding: 24px 12px;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .sections {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+.profile-photo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(248, 250, 252, 0.85);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.7);
+  background: radial-gradient(circle at 30% 20%, #1f2937, #020617);
+}
+
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="headline">
+          <div>
+            <div class="tagline">Politiques publiques & affaires européennes</div>
+            <h1 class="name">Théophane Gauthier</h1>
+          </div>
+          <div class="pill">
+            <span class="pill-dot"></span>
+            À la recherche d’un poste
+          </div>
+        </div>
+
+        <p class="intro">
+          Récemment diplômé du double cursus « Management des politiques publiques » entre Sciences Po Lille et l’EDHEC Business School, avec des expériences en administration publique, affaires publiques et gestion opérationnelle internationale.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Transformation numérique de l’État</span>
+          <span class="chip">Affaires publiques & lobbying</span>
+          <span class="chip">Gestion de projets européens</span>
+          <span class="chip">Management d’équipes & opérations</span>
+        </div>
+
+        <div class="meta">
+          <div class="meta-item">
+            <span class="meta-dot"></span>
+            ANTS – France Identité, DINUM, Rumeur Publique
+          </div>
+          <div class="meta-item">
+            <span class="meta-dot"></span>
+            Parlement européen des Jeunes, Junior-Entreprise
+          </div>
+        </div>
+      </div>
+
+     <aside class="side-card">
+  <div class="profile-photo-wrapper">
+    <!-- Remplace src par l’URL ou le chemin de ta photo -->
+    <img src="photo.jpg" alt="Photo de Théophane Gauthier" class="profile-photo">
+  </div>
+
+  <div class="contact-block">
+    <h2>Contact</h2>
+    <div class="contact-item">
+      <a href="mailto:theophane.gauthier@sciencespo-lille.eu">
+        theophane.gauthier@sciencespo-lille.eu
+      </a>
+    </div>
+    <div class="contact-item">
+      <a href="tel:+33637908379">+33 6 37 90 83 79</a>
+    </div>
+    <div class="location">
+      Maisons-Alfort · Île-de-France · France
+    </div>
+    <div class="availability">
+      Disponible pour un CDI/CDD à partir de <span>septembre 2026</span>.
+    </div>
+  </div>
+</aside>
+
+    </section>
+
+    <!-- MAIN SECTIONS -->
+    <section class="sections">
+      <!-- Colonne gauche -->
+      <div class="section-card">
+        <h2 class="section-title">Expériences professionnelles</h2>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">ANTS – France Titres, Programme France Identité Numérique</div>
+            <div class="entry-meta">Stage de fin d’études · janv. – juil. 2026</div>
+          </div>
+          <div class="entry-sub">Appui au directeur de l’application « France Identité » et coordination du consortium européen « Aptitude ».</div>
+          <ul>
+            <li>Contribution à la stratégie produit de l’application France Identité.</li>
+            <li>Soutien à la coordination d’un consortium européen sur l’identité numérique.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Direction interministérielle du numérique – Cabinet de la Directrice</div>
+            <div class="entry-meta">Stage · juin – sept. 2025</div>
+          </div>
+          <div class="entry-sub">
+            Construction d’un consortium pour une infrastructure numérique européenne et appui à la transformation des projets numériques publics.
+          </div>
+          <ul>
+            <li>Création et implémentation du DC‑EDIC sur les Communs numériques, en lien avec la Commission européenne et des partenaires transfrontaliers.</li>
+            <li>Dépôt de la structure légale en préfecture et rédaction d’un livre blanc sur le passage en « mode produit » à France Travail.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Rumeur Publique – Pôle Affaires publiques</div>
+            <div class="entry-meta">Stage de césure · sept. 2024 – janv. 2025</div>
+          </div>
+          <div class="entry-sub">Accompagnement de clients dans leurs stratégies de lobbying et de plaidoyer.</div>
+          <ul>
+            <li>Veille législative et réglementaire, rédaction de brèves d’analyse.</li>
+            <li>Cartographies d’acteurs et biographies de parties prenantes, prise de notes en rendez‑vous.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Évènements sportifs internationaux</div>
+            <div class="entry-meta">Étés 2023 & 2024</div>
+          </div>
+          <div class="entry-sub">
+            Supervision du transport des populations accréditées (tournois de tennis et Jeux Olympiques).
+          </div>
+          <ul>
+            <li>Gestion de 50 volontaires, d’une flotte de 20 véhicules et coordination de 40 chauffeurs.</li>
+            <li>Mise en œuvre de solutions rapides pour maintenir un taux de 99 % de courses assurées à l’heure.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Département de la Seine-Maritime – Collaborateur politique</div>
+            <div class="entry-meta">Temps partiel · oct. 2023 – mai 2024</div>
+          </div>
+          <div class="entry-sub">Appui communication et production de contenus politiques.</div>
+          <ul>
+            <li>Élaboration de stratégies de communication et rédaction de notes politiques.</li>
+            <li>Production de contenus numériques, dont une série de 15 vidéos de décryptage de l’action politique.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Stages de découverte – Seine-Maritime</div>
+            <div class="entry-meta">2020 – 2022</div>
+          </div>
+          <div class="entry-sub">
+            Cabinet du Président du Département (juin – juillet 2022), Cabinet du Maire du Havre (juillet 2020), Députée de la Seine-Maritime (juin 2020).
+          </div>
+        </article>
+      </div>
+
+      <!-- Colonne droite -->
+      <div class="section-card">
+        <h2 class="section-title">Formation</h2>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Sciences Po Lille</div>
+            <div class="entry-meta">2020 – 2026</div>
+          </div>
+          <div class="entry-sub">Double cursus avec l’Université du Kent et l’EDHEC Business School.</div>
+          <ul>
+            <li>Rapport d’expertise : « L’implémentation et la sécurisation du mandat administratif numérique ».</li>
+            <li>Membre du Conseil d’administration, représentant étudiant (sept. 2024 – nov. 2025).</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">EDHEC Business School</div>
+            <div class="entry-meta">2023 – 2026</div>
+          </div>
+          <div class="entry-sub">Programme Grande École – Management des politiques publiques.</div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">University of Kent (Royaume-Uni)</div>
+            <div class="entry-meta">2020 – 2024</div>
+          </div>
+          <div class="entry-sub">Bachelor of Arts, Politics and International Relations (First Class).</div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">CPGE B/L – Sainte-Marie de Neuilly</div>
+            <div class="entry-meta">2019 – 2020</div>
+          </div>
+          <div class="entry-sub">Classe préparatoire lettres et sciences sociales.</div>
+        </article>
+
+        <h2 class="section-title" style="margin-top:16px;">Engagements associatifs</h2>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Parlement européen des Jeunes – France</div>
+            <div class="entry-meta">2019 – 2025</div>
+          </div>
+          <div class="entry-sub">Responsable associatif au sein du comité français du réseau européen.</div>
+          <ul>
+            <li>Planification stratégique et demandes de subventions (env. 500 000 € de budget annuel).</li>
+            <li>Gestion administrative, conformité légale et animation d’un réseau de 100 bénévoles.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Sciences Po Lille Junior Conseil</div>
+            <div class="entry-meta">sept. 2023 – sept. 2024</div>
+          </div>
+          <div class="entry-sub">Chef de projet et chargé du suivi d’études.</div>
+          <ul>
+            <li>Suivi de missions, prospection et mise en relation clients–consultants.</li>
+            <li>Veille de conformité au cadre légal des Junior-Entreprises.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-header">
+            <div class="entry-main">Scouts Unitaires de France – Londres</div>
+            <div class="entry-meta">sept. 2022 – juin 2023</div>
+          </div>
+          <div class="entry-sub">Chef d’unité.</div>
+        </article>
+
+        <h2 class="section-title" style="margin-top:16px;">Compétences</h2>
+
+        <div class="entry">
+          <div class="entry-sub"><strong>Langues</strong></div>
+          <div class="skills-list">
+            <span>Français (natif)</span>
+            <span>Anglais (bilingue)</span>
+            <span>Allemand (A2, écrit & oral)</span>
+          </div>
+        </div>
+
+        <div class="entry" style="margin-top:8px;">
+          <div class="entry-sub"><strong>Outils & logiciels</strong></div>
+          <div class="skills-list">
+            <span>Suite Adobe (Illustrator, Lightroom, Premiere Pro)</span>
+            <span>Canva</span>
+            <span>Suite Google</span>
+            <span>Suite Office (Excel)</span>
+            <span>RStudio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
